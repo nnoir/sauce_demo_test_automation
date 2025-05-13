@@ -12,9 +12,7 @@ def test_sort_by_lower_price(driver):
 
     products_page = ProductsPage(driver)
 
-    time.sleep(2)
     products_page.select_sort_option("Price (low to high)")
-    time.sleep(2)
     prices = products_page.get_prices()
 
     assert prices == sorted(prices)
@@ -26,9 +24,7 @@ def test_sort_by_name_za(driver):
 
     products_page = ProductsPage(driver)
 
-    time.sleep(2)
     products_page.select_sort_option("Name (Z to A)")
-    time.sleep(2)
     name = products_page.name_za_elements()
 
     assert name == sorted(name, reverse=True)

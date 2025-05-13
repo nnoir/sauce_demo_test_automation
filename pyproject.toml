@@ -1,0 +1,21 @@
+[project]
+name = "selenium-test-suite"
+version = "0.1.0"
+description = "This projects represents automated test for web-app Sauce Demo using Python and Selenium."
+authors = [
+    { name = "Mykyta Biba", email = "bibamykyta5@gmail.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "selenium>=4.0.0",
+    "webdriver-manager>=4.0.0",
+    "pytest>=7.0.0"
+]
+
+[tool.pytest.ini_options]
+addopts = "-v --tb=short"
+testpaths = ["tests"]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"

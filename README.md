@@ -21,20 +21,33 @@ This projects represents automated test for web-app Sauce Demo using Python and 
 
 1. Clone repository:
 
-    '''bash
+
     git clone https://github.com/nnoir/Sauce-Demo-Test-Automation.git
 
 2. Go to Project Directory
 
+
     cd sauce_demo_test_automation
 
-3. Download requirements:
+3. Download requirements(Windows):
 
-    pip install -r requirements.txt
+
+    pip install -e .
+
+3. Dowload requirements(Docker):
+   
+
+    docker compose up
+
 
 4. Tests start:
+   ```
+   .\venv\Scripts\Activate.ps1
+   ```
 
+   ```
    pytest
+   ```
 
 if u want to start specific test:
 
@@ -47,11 +60,3 @@ test/: Directory with tests
 pages/: Directory with pages (Pages Object Model)
 
 conftest.py: Settings and fixtures for pytest
-
-requirements.txt: Dependencies list
-
-## Dependencies
-
-    Selenium
-    WebDriver Manager
-    pytest
