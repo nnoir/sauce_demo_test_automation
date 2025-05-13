@@ -53,6 +53,10 @@ if u want to start specific test:
 
     pytest -k "test_sort_by_lower_price"
 
+if iu want to start all test in parallel(auto = CPU core count):
+
+    pytest -n auto
+
 ## Project Structure
 
 test/: Directory with tests

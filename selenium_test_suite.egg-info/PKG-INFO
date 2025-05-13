@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: selenium-test-suite
+Version: 0.1.0
+Summary: This projects represents automated test for web-app Sauce Demo using Python and Selenium.
+Author-email: Mykyta Biba <bibamykyta5@gmail.com>
+Requires-Python: >=3.10
+License-File: LICENSE
+Requires-Dist: selenium>=4.0.0
+Requires-Dist: webdriver-manager>=4.0.0
+Requires-Dist: pytest>=7.0.0
+Requires-Dist: pytest-xdist>=3.0.0
+Dynamic: license-file

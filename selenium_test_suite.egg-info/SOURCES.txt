@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+pages/__init__.py
+pages/cart_page.py
+pages/login_page.py
+pages/products_page.py
+selenium_test_suite.egg-info/PKG-INFO
+selenium_test_suite.egg-info/SOURCES.txt
+selenium_test_suite.egg-info/dependency_links.txt
+selenium_test_suite.egg-info/requires.txt
+selenium_test_suite.egg-info/top_level.txt
+tests/test_cart.py
+tests/test_login.py
+tests/test_sorting.py
