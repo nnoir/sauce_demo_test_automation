@@ -8,6 +8,6 @@ COPY . .
 RUN apt update && apt install -y python3-pip
 
 RUN pip install --upgrade pip --break-system-packages
-RUN pip install --break-system-packages -r requirements.txt
+RUN pip install --break-system-packages -e .
 
-CMD ["python3", "-m", "pytest"]
+CMD ["python3", "-m", "pytest", "-n", "auto"]
