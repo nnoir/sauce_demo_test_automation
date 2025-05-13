@@ -1,5 +1,3 @@
-import time
-from time import sleep
 
 from pages.login_page import LoginPage
 from pages.products_page import ProductsPage

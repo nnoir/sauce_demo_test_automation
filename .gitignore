@@ -1,3 +1,5 @@
 venv/
 .pytest_cache/
 __pycache__/
+selenium_test_suite.egg-info/
+pages.egg-info/
