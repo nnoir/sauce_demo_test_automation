@@ -17,6 +17,10 @@ This projects represents automated test for web-app Sauce Demo using Python and 
 
 -WebDriver Manager
 
+-Docker (for containerized execution)
+
+-Pytest-xdist (parallel test execution)
+
 ## Installation
 
 1. Clone repository:
