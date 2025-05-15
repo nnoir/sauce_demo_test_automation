@@ -10,7 +10,8 @@ dependencies = [
     "selenium>=4.0.0",
     "webdriver-manager>=4.0.0",
     "pytest>=7.0.0",
-    "pytest-xdist>=3.0.0"
+    "pytest-xdist>=3.0.0",
+    "mysql-connector-python>=9.0.0"
 ]
 readme = "README.md"
 
@@ -21,3 +22,7 @@ testpaths = ["tests"]
 [build-system]
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["pages"]
+exclude = ["init_db"]

@@ -1,14 +1,22 @@
-
-
+import pytest
 from pages.login_page import LoginPage
-from pages.products_page import ProductsPage
+from db_utils import get_test_users
 
-def test_successful_login(driver):
+def pytest_generate_tests(metafunc):
+    if "username" in metafunc.fixturenames and "password" in metafunc.fixturenames:
+        users = get_test_users()
+        metafunc.parametrize("username,password", users)
+
+def test_successful_login(driver, username, password):
     login_page = LoginPage(driver)
     login_page.open()
-    login_page.login("standard_user", "secret_sauce")
+    login_page.login(username, password)
 
-    assert "inventory" in driver.current_url
+    if "inventory" in driver.current_url:
+        assert True
+    else:
+        error_message = login_page.invalid_login()
+        pytest.fail(f"❌ Login failed for user: '{username}'. Reason: '{error_message}'")
 
 def test_invalid_login(driver):
     login_page = LoginPage(driver)

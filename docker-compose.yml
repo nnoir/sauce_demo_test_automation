@@ -1,9 +1,39 @@
-version: '3'
+version: '3.9'
+
 services:
-    app:
-        build:
-            context: .
-            dockerfile: .docker/Dockerfile
-        volumes:
-            - .:/app
-      
+  mysql:
+    image: mysql:8.0
+    container_name: test_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: testdb
+      MYSQL_USER: testuser
+      MYSQL_PASSWORD: testpass
+    volumes:
+      - ./init_db:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks:
+      - appnet
+
+  tests:
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile
+    depends_on:
+      mysql:
+        condition: service_healthy
+    volumes:
+      - .:/app
+    env_file:
+      - .env.docker
+    networks:
+      - appnet
+
+networks:
+  appnet:
+    driver: bridge
