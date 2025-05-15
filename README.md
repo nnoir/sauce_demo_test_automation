@@ -21,6 +21,8 @@ This projects represents automated test for web-app Sauce Demo using Python and 
 
 -Pytest-xdist (parallel test execution)
 
+-SQL (for test data)
+
 ## Installation
 
 1. Clone repository:
@@ -41,7 +43,7 @@ This projects represents automated test for web-app Sauce Demo using Python and 
 3. Dowload requirements(Docker):
    
 
-    docker compose up
+    docker-compose up --build --abort-on-container-exit
 
 
 4. Tests start:
@@ -68,3 +70,13 @@ test/: Directory with tests
 pages/: Directory with pages (Pages Object Model)
 
 conftest.py: Settings and fixtures for pytest
+
+## Notes
+The project supports both local and Dockerized execution.
+
+Environment-specific variables are loaded using python-dotenv.
+
+You can control which environment file to load using ENV_FILE:
+
+
+    ENV_FILE=.env.local pytest
