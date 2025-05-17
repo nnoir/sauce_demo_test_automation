@@ -16,7 +16,7 @@ def get_test_users():
     is_local = os.getenv("IS_LOCAL", "false").lower() == "true"
     if is_local:
         user = "root"
-        password = os.getenv("LOCAL_DB_PASSWORD", "")
+        password = os.getenv("LOCAL_DB_PASSWORD", "taraspomidor")
         host = "127.0.0.1"
     else:
         user = os.getenv("DB_USER", "testuser")
