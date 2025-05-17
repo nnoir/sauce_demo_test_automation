@@ -21,9 +21,7 @@ services:
       - appnet
 
   tests:
-    build:
-      context: .
-      dockerfile: .docker/Dockerfile
+    image: local:latest
     depends_on:
       mysql:
         condition: service_healthy
