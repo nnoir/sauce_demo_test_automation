@@ -59,3 +59,10 @@ jobs:
       - name: Run tests using Docker Compose
         run: |
           docker compose up --abort-on-container-exit
+
+  build-and-push:
+    needs: docker-tests
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    steps:
+      - name: Checkout code

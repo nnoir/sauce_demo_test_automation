@@ -21,6 +21,3 @@ def driver():
     yield driver
     driver.quit()
 
-
-
-    #just poop
