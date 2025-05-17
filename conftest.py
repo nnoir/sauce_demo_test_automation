@@ -16,7 +16,11 @@ def driver():
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
 
-    # No webdriver-manager
+
     driver = webdriver.Chrome(options=options)
     yield driver
     driver.quit()
+
+
+
+    #just poop
